@@ -1,9 +1,9 @@
-from django.urls import path, include
-from users import views
 from rest_framework.routers import DefaultRouter
+from cakes.views import CakeViewSet
+from django.urls import path, include
 
 router = DefaultRouter()
-router.register(r"", views.UserViewSet, basename="user")
+router.register(r"", CakeViewSet, basename="cake")
 
 urlpatterns = [
     path("", include(router.urls)),
